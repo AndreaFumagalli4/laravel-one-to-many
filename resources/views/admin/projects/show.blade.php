@@ -4,7 +4,7 @@
     <div class="container">
         <div class="card text-center mt-3">
             <div class="card-header">
-                
+                Type : <span class="fw-bold">{{ $project->type->name }}</span>
             </div>
             <div class="card-body">
                 <h2 class="card-title fw-bold">

@@ -21,9 +21,9 @@
                         <label class="form-label" for="type">
                             Type
                         </label>
-                        <select class="form-control @error('title') is-invalid @enderror" name="type" id="project_type">
+                        <select class="form-control" name="type" id="project_type">
                             @foreach ($types as $type)
-                                <option value="{{ $type->id }}">
+                                <option value="{{ $type->id }}" {{ old('type_id', $project->type_id) == $type->id ? 'selected' : '' }}>
                                     {{ $type->name }}
                                 </option>
                             @endforeach

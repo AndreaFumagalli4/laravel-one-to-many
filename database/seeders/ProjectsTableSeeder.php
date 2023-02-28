@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Project;
+use App\Models\Type;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
@@ -20,6 +21,7 @@ class ProjectsTableSeeder extends Seeder
     {
         for ($i=0; $i < 20; $i++) { 
             $newProject = new Project();
+            $newProject->type_id = Type::inRandomOrder()->first()->id;
             $newProject->title = $faker->unique()->sentence(5);
             $newProject->thumb = 'imgs/fake-duck.jpg';
             $newProject->used_language = $faker->word();

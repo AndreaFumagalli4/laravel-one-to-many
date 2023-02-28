@@ -13,6 +13,10 @@ class Project extends Model
     
     protected $fillable = array('title', 'thumb', 'used_language', 'link');
 
+    public function type() {
+        return $this->belongsTo(Type::class);
+    }
+
     public function isImageAUrl() {
         return filter_var($this->thumb, FILTER_VALIDATE_URL);
     }

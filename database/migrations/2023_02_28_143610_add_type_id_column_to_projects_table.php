@@ -14,8 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->string('slug', 255);
-            $table->dateTime('project_date');
+            $table->unsignedBigInteger('type_id');
+
+            $table->foreign('type_id')
+                ->references('id')
+                ->on('types');
         });
     }
 
@@ -26,9 +29,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('slug');
-            $table->dropColumn('project_date');
+        Schema::table('projects', function (Blueprint $table) {
+            $table->dropForeign('projects_type_id_foreign');
+            $table->dropColumn('type_id');
         });
     }
 };

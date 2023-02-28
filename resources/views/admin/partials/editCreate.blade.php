@@ -18,10 +18,10 @@
                 </div>
                 <div class="card-body">
                     <div class="mb-3">
-                        <label class="form-label" for="type">
+                        <label class="form-label" for="project_type">
                             Type
                         </label>
-                        <select class="form-control" name="type" id="project_type">
+                        <select class="form-control" name="type_id" id="project_type">
                             @foreach ($types as $type)
                                 <option value="{{ $type->id }}" {{ old('type_id', $project->type_id) == $type->id ? 'selected' : '' }}>
                                     {{ $type->name }}

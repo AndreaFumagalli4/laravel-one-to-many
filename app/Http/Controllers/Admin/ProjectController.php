@@ -46,7 +46,7 @@ class ProjectController extends Controller
             'thumb' => 'required|image|max:500',
             'used_language' => 'required|max:255',
             'link' => 'required|active_url',
-            'type_id' => 'required|exist:types,id'
+            'type_id' => 'required|exists:types,id'
         ]);
         $data['thumb'] = Storage::put('imgs/', $data['thumb']);
         
@@ -94,7 +94,7 @@ class ProjectController extends Controller
             'thumb' => 'required|image|max:500',
             'used_language' => 'required|max:255',
             'link' => 'required|active_url',
-            'type_id' => 'required|exist:types,id'
+            'type_id' => 'required|exists:types,id'
         ]);
 
         if ($request->hasFile('thumb')){

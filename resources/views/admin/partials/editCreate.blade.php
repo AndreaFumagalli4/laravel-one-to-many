@@ -18,6 +18,18 @@
                 </div>
                 <div class="card-body">
                     <div class="mb-3">
+                        <label class="form-label" for="type">
+                            Type
+                        </label>
+                        <select class="form-control @error('title') is-invalid @enderror" name="type" id="project_type">
+                            @foreach ($types as $type)
+                                <option value="{{ $type->id }}">
+                                    {{ $type->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="mb-3">
                         <label class="form-label" for="title">
                             Title
                         </label>

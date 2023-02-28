@@ -3,6 +3,9 @@
 @section('content')
     <div class="container">
         <div class="card text-center mt-3">
+            <div class="card-header">
+                
+            </div>
             <div class="card-body">
                 <h2 class="card-title fw-bold">
                     {{ $project->title }}
